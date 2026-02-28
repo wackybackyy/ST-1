@@ -1,3 +1,4 @@
+// Copyright 2026 UNN-CS
 #include <cstdint>
 
 bool checkPrime(uint64_t value) {
@@ -24,15 +25,20 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  if (value < 2) return 2;
+  if (value < 2) {
+    return 2;
+  }
 
   uint64_t candidate = value + 1;
-  if (candidate == 2) return 2;
 
-  if (candidate % 2 == 0) ++candidate;
+  if (candidate % 2 == 0) {
+    ++candidate;
+  }
+
   while (!checkPrime(candidate)) {
     candidate += 2;
   }
+
   return candidate;
 }
 
